@@ -120,6 +120,6 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["fish_speech", "tools"]
+packages = {find = {include = ["fish_speech", "fish_speech.*", "tools", "tools.*"]}}
 
 [tool.setuptools_scm]
