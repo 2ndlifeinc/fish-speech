@@ -3,7 +3,7 @@ from pathlib import Path
 import click
 import hydra
 import numpy as np
-import pyrootutils
+# import pyrootutils  # patched: not needed when installed as package
 import soundfile as sf
 import torch
 import torchaudio
@@ -12,7 +12,7 @@ from hydra.utils import instantiate
 from loguru import logger
 from omegaconf import OmegaConf
 
-pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
+# pyrootutils.setup_root(...)  # patched: causes FileNotFoundError in site-packages
 
 from fish_speech.utils.file import AUDIO_EXTENSIONS
 

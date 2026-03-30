@@ -124,7 +124,7 @@ class FishTokenizer:
     def get_token_id(self, token: str) -> int:
         return self.all_special_tokens_with_ids[token]
 
-    def encode(self, s: str, allowed_special: bool | set[str] = True) -> list[int]:
+    def encode(self, s: str, allowed_special: bool | set[str] = True, add_special_tokens: bool = True, **kwargs) -> list[int]:
         assert isinstance(s, str)
 
         subs = []
