@@ -976,3 +976,9 @@ class DAC(BaseModel, CodecMixin):
         z = vq_results[0] if isinstance(vq_results, tuple) else vq_results.z
         x = self.decode(z)
         return x[..., :length], vq_results
+
+
+# Compatibility shim for mlx-audio-server
+def load_decoder_model(config_name, checkpoint_path, device="cpu"):
+    from fish_speech.models.dac.inference import load_model
+    return load_model(config_name, checkpoint_path, device=device)
