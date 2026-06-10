@@ -5,7 +5,7 @@ on:
 
 jobs:
   close-issues:
-    runs-on: [self-hosted, Linux]
+    runs-on: [self-hosted, macos-or-linux]
     permissions:
       issues: write
       pull-requests: write
